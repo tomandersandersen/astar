@@ -1,13 +1,25 @@
-"""
-Maze world interface class
-"""
+class MazeTile:
+    """
+    Tile class.
+    """
+    NON_TRAVERSABLE = 0
+    TRAVERSABLE = 1
 
 
 class IMaze:
+    """
+    Maze world interface class
+    """
 
     def is_traversable(self, x, y) -> bool:
         """
         :return: True if point (x, y) is traversable.
+        """
+        raise NotImplementedError()
+
+    def get(self, x, y) -> MazeTile:
+        """
+        :return: Returns the tile type at point (x, y).
         """
         raise NotImplementedError()
 
